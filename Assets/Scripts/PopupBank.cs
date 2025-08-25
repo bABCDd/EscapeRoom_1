@@ -10,7 +10,9 @@ public class PopupBank : MonoBehaviour
     public GameObject ATM;
     public GameObject Withdraw;
     public GameManager gameManager;
-
+    public NumberUnit numberUnit; // Uncommented and added a reference to NumberUnit
+    public InputField inputDeposit;
+    public InputField inputWithdraw;
     public void OpenDeposit()
     {
         Deposit.SetActive(true);
@@ -32,12 +34,38 @@ public class PopupBank : MonoBehaviour
 
     public void DepositBtn(int amount)
     {
+        if (GameManager.instance.userData.Cash < amount) 
+            return;
         GameManager.instance.userData.Cash -= amount;
         GameManager.instance.userData.Balance += amount;
+        numberUnit.Refresh();
     }
     public void WithdrawBtn(int amount)
     {
+        if (GameManager.instance.userData.Balance < amount)
+            return;
         GameManager.instance.userData.Cash += amount;
         GameManager.instance.userData.Balance -= amount;
+        numberUnit.Refresh();
+    }
+
+    public void InputDepositBtn(int amount)
+    {
+        amount = int.Parse(inputDeposit.text);
+        if (GameManager.instance.userData.Cash < amount)
+            return;
+        GameManager.instance.userData.Cash -= amount;
+        GameManager.instance.userData.Balance += amount;
+        numberUnit.Refresh();
+    }
+
+    public void InputWithdrawBtn(int amount)
+    {
+        amount = int.Parse(inputWithdraw.text);
+        if (GameManager.instance.userData.Balance < amount)
+            return;
+        GameManager.instance.userData.Cash += amount;
+        GameManager.instance.userData.Balance -= amount;
+        numberUnit.Refresh();
     }
 }

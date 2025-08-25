@@ -27,7 +27,6 @@ public class NumberUnit : MonoBehaviour
         NameText.text = userData.UserName;
     }
 
-
     void Update()
     {
 
