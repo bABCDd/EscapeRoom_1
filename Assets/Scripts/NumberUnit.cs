@@ -26,9 +26,4 @@ public class NumberUnit : MonoBehaviour
         MoneyText.text = string.Format("{0:N0}", userData.Cash);
         NameText.text = userData.UserName;
     }
-
-    void Update()
-    {
-
-    }
 }

@@ -15,4 +15,17 @@ public class UserData
         Cash = cash;
         Balance = balance;
     }
+
+/*    public bool Deposit(int amount)
+    {
+        if (amount > Cash)
+        {
+            return false;
+        }
+        else
+        {
+            { Cash -= amount; Balance += amount; }
+        }
+            return true;
+    }*/
 }
