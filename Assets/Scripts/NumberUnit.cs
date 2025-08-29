@@ -25,5 +25,6 @@ public class NumberUnit : MonoBehaviour
         BalanceText.text = string.Format("{0:N0}", userData.Balance);
         MoneyText.text = string.Format("{0:N0}", userData.Cash);
         NameText.text = userData.UserName;
+        GameManager.instance.SaveUserData();
     }
 }

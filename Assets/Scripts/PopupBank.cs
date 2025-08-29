@@ -51,7 +51,6 @@ public class PopupBank : MonoBehaviour
         GameManager.instance.userData.Cash -= amount;
         GameManager.instance.userData.Balance += amount;
         numberUnit.Refresh();
-        GameManager.instance.SaveUserData();
     }
 
 /*    public void TestDeoposit(int amount)
@@ -78,7 +77,6 @@ public class PopupBank : MonoBehaviour
         GameManager.instance.userData.Cash += amount;
         GameManager.instance.userData.Balance -= amount;
         numberUnit.Refresh();
-        GameManager.instance.SaveUserData();
     }
 
     public void InputDepositBtn(int amount)
@@ -92,7 +90,6 @@ public class PopupBank : MonoBehaviour
         GameManager.instance.userData.Cash -= amount;
         GameManager.instance.userData.Balance += amount;
         numberUnit.Refresh();
-        GameManager.instance.SaveUserData();
     }
 
     public void InputWithdrawBtn(int amount)
@@ -106,7 +103,6 @@ public class PopupBank : MonoBehaviour
         GameManager.instance.userData.Cash += amount;
         GameManager.instance.userData.Balance -= amount;
         numberUnit.Refresh();
-        GameManager.instance.SaveUserData();
     }
     public IEnumerator ShowFailImage()
     {

@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadUserData() //Json으로 유저 데이터 불러오기
     {   
-        string path = File.ReadAllText(Application.persistentDataPath + "/UserData.json");
-        userData = JsonUtility.FromJson<UserData>(path);
+        string loadData = File.ReadAllText(Application.persistentDataPath + "/UserData.json");
+        userData = JsonUtility.FromJson<UserData>(loadData);
     }
 }
